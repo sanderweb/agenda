@@ -55,10 +55,12 @@
                     <a class="nav-link" href="#">Contato</a>
                 </li>
             </ul>
+<!--
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><strong>Pesquisar</strong></button>
             </form>
+-->
         </div>
     </nav>
     </div>
@@ -67,8 +69,10 @@
     <?php require_once 'processos.php'; ?>
     <!--    FORMULÁRIO      -->    
     <div class="container mt-2 mb-4 p-2 shadow bg-white">
-        <a href="https://www.youtube.com/watch?v=3xRMUDC74Cw&t=31s" target="_blank">Parei 16:49</a>
+<!--
+        <a href="https://www.youtube.com/watch?v=3xRMUDC74Cw&t=31s" target="_blank">Parei 26:58</a>
         <a href="https://www.youtube.com/watch?v=MccPSNL_VzU&t=1383s" target="_blank">Modelo</a>      
+-->
         <div class="form-row justify-content-center">
             <form action="processos.php" method="POST">
                 <div class="row">
