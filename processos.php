@@ -5,6 +5,13 @@ session_start();
 //Connection data
 $mysqli = new mysqli('localhost', 'root', '', 'agendapmnf') or die(mysqli_error($mysqli));
 
+$update = false;
+
+$secretaria = '';
+$servidor = '';
+$email = '';
+$ramal = '';
+
 // INSERT OK
 if (isset($_POST['salvar'])) {
     $secretaria = $_POST['secretaria'];
@@ -21,7 +28,6 @@ if (isset($_POST['salvar'])) {
 }
 // END INSERT OK
 
-
 //DELETE
 if (isset($_GET['deletar'])) {
     $id = $_GET['deletar'];
@@ -32,6 +38,21 @@ if (isset($_GET['deletar'])) {
 
     header("Location: index.php");
 }
-//END DELETE
+//END DELETE OK
 
+//EDIT
+//    if (isset($_GET['editar'])) {
+//        $id = $_GET['editar'];
+//        $result = $mysqli->query("SELECT * FROM fazenda WHERE id=$id") or die ($mysqli_error());
+//        if (count($result)==1) {
+//            $row = $result->fetch_array();
+//            $secretaria = $row['secretaria'];
+//            $servidor = $row['servidor'];
+//            $email = $row['email'];
+//            $ramal = $row['ramal'];
+//        }
+//        header("Location: index.php");
+//    }
+//END EDIT
+    
 ?>

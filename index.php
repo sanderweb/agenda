@@ -9,14 +9,14 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="css/bootstrap.css">
 
-    <title>Agenda PMNF 2019</title>
+    <title>Agenda PMNF 2017</title>
   </head>
   <body>
    
     <!--    NAVBAR-->
     <div class="container menu">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">AGENDA PMNF 2019</a>
+        <a class="navbar-brand" href="#">AGENDA PMNF 2017</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -26,31 +26,6 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Fazenda <span class="sr-only">(página atual)</span></a>
                 </li>
-<!--
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Educação</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Saúde</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Restrito</a>
-                </li>     
--->
-<!--
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Externo
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Fazenda</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Educação</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Saúde</a>
-                    </div>
-                </li>
--->
                 <li class="nav-item mr-3">
                     <a class="nav-link" href="#">Contato</a>
                 </li>
@@ -70,23 +45,24 @@
     <!--    FORMULÁRIO      -->    
     <div class="container mt-2 mb-4 p-2 shadow bg-white">
 <!--
-        <a href="https://www.youtube.com/watch?v=3xRMUDC74Cw&t=31s" target="_blank">Parei 26:58</a>
-        <a href="https://www.youtube.com/watch?v=MccPSNL_VzU&t=1383s" target="_blank">Modelo</a>      
+        <a href="https://www.youtube.com/watch?v=3xRMUDC74Cw&t=31s" target="_blank">Parei 31:25</a>
+        <a href="https://www.youtube.com/watch?v=MccPSNL_VzU&t=1383s" target="_blank">Modelo</a>
 -->
+        
         <div class="form-row justify-content-center">
             <form action="processos.php" method="POST">
                 <div class="row">
                     <div class="col">
-                        <input type="text" name="secretaria" title="O nome da sua secretaria '/' seu setor.  p. ex. Administração/Recursos Humanos." class="form-control" placeholder="Secretaria/Setor">
+                        <input type="text" name="secretaria" value="<?php echo $secretaria; ?>" title="O nome da sua secretaria '/' seu setor.  p. ex. Administração/Recursos Humanos." class="form-control" placeholder="Secretaria/Setor">
                     </div>
                     <div class="col">
-                        <input type="text" name="servidor" title="Digite o seu login do computador,  p. ex. renato.bravo" class="form-control" placeholder="Servidor/Funcionário">
+                        <input type="text" name="servidor" value="<?php echo $servidor; ?>" title="Digite o seu login do computador,  p. ex. renato.bravo" class="form-control" placeholder="Servidor/Funcionário">
                     </div>
                     <div class="col">
-                        <input type="text" name="email" class="form-control" title="De preferência o e-mail institucional: meu_email@pmnf.rj.gov.br Ou secretaria_tal@pmnf.rj.gov.br - Ou se não tiver o que estiver usando atualmente." placeholder="E-mail">
+                        <input type="text" name="email" value="<?php echo $email; ?>" class="form-control" title="De preferência o e-mail institucional: meu_email@pmnf.rj.gov.br Ou secretaria_tal@pmnf.rj.gov.br - Ou se não tiver o que estiver usando atualmente." placeholder="E-mail">
                     </div>
                     <div class="col">
-                        <input type="text" name="ramal" class="form-control" title="Esse campo suporta apenas 4 Dígitos." placeholder="Ramal">
+                        <input type="text" name="ramal" value="<?php echo $ramal; ?>" class="form-control" title="Esse campo suporta apenas 4 Dígitos." placeholder="Ramal">
                     </div>
 
                     <div class="form-group">
@@ -95,6 +71,7 @@
 
                 </div><!--END ROW-->
             </form><!--END FORM-->
+            
         </div><!--END FORM ROW-->
     </div>
     <!-- FOMULÁRIO CONTAINER-->    
@@ -111,6 +88,50 @@
         <?php endif ?>
     </div>
 <!--       END ALERTA-->
+    
+<!--MODAL-->
+<div class="modal fade bd-example-modal-xl" id="exampleModalLabel" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+        <h5 class="modal-title py-3 ml-4">Editar Servidor</h5>    
+
+            <!--    FORMULÁRIO      -->
+            <div class="container mt-2 mb-4 p-2 shadow bg-white">
+                <div class="form-row justify-content-center">
+                    <form action="processos.php" method="POST">
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" name="secretaria" value="<?php echo $secretaria; ?>" title="O nome da sua secretaria '/' seu setor.  p. ex. Administração/Recursos Humanos." class="form-control" placeholder="Secretaria/Setor">
+                            </div>
+                            <div class="col">
+                                <input type="text" name="servidor" value="<?php echo $servidor; ?>" title="Digite o seu login do computador,  p. ex. renato.bravo" class="form-control" placeholder="Servidor/Funcionário">
+                            </div>
+                            <div class="col">
+                                <input type="text" name="email" value="<?php echo $email; ?>" class="form-control" title="De preferência o e-mail institucional: meu_email@pmnf.rj.gov.br Ou secretaria_tal@pmnf.rj.gov.br - Ou se não tiver o que estiver usando atualmente." placeholder="E-mail">
+                            </div>
+                            <div class="col">
+                                <input type="text" name="ramal" value="<?php echo $ramal; ?>" class="form-control" title="Esse campo suporta apenas 4 Dígitos." placeholder="Ramal">
+                            </div>                  
+
+                        </div>
+                        <!--END ROW-->
+                    </form>
+                    <!--END FORM-->
+
+                </div>
+                <!--END FORM ROW-->
+            </div>
+            <!-- FOMULÁRIO CONTAINER-->
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"><strong>Fechar</strong></button>
+                <button type="submit" name="salvar_mudancas" class="btn btn-success"><strong>Salvar Mudanças</strong></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--END MODAL -->
         
     <!--    TABELA-->
     <div class="container tabela mt-4">       
@@ -137,9 +158,9 @@
                     <td><?php echo $row['email']; ?></td>
                     <td><?php echo $row['ramal']; ?></td>
                     <td>
-
-                        <a href="index.php?edit=<?php echo $row['id']; ?>" class="btn btn-outline-warning"><strong>Editar</strong></a>
-                        <a href="processos.php?deletar=<?php echo $row['id']; ?>" class="btn btn-outline-danger"><strong>Deletar</strong></a>
+                    
+                    <a href="editar.php?editar=<?php echo $row['id']; ?>" class="btn btn-outline-warning">Editar</a>
+                    <a href="processos.php?deletar=<?php echo $row['id']; ?>" class="btn btn-outline-danger"><strong>Deletar</strong></a>
 
                     </td>
                 </tr>
@@ -152,8 +173,8 @@
     
     <!--    FOOTER-->    
     <footer class="footer">
-      <div class="container fixed-bottom text-center">
-        <span class="text-muted">Desenvolvido por Alex Araujo | PMNF 2019.</span>
+      <div class="container text-center">
+        <span class="text-muted">Desenvolvido por Alex Araujo - V1.0 | PMNF 2019.</span>
       </div>
     </footer>
     <!--    END FOOTER-->
